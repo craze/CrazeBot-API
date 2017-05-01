@@ -55,7 +55,7 @@ class API {
 					break;
 				case 'filters':
 					$jsonData = array(
-						'config' => array('useFilters' => $this->ch->useFilters, 'globalFilter' => $this->ch->globalFilter),
+						'settings' => array('useFilters' => $this->ch->useFilters, 'globalFilter' => $this->ch->globalFilter),
 						'filter' => $this->getFilters()
 					);
 					break;
