@@ -40,11 +40,11 @@ class API {
 			switch ($this->arg [1]) {
 				case 'commands':
 					$jsonData = array(
-						'config' => array(
+						'settings' => array(
 							'prefix' => $this->ch->commandPrefix,
 							'mode' => $this->ch->mode
 						),
-						'cmd' => $this->getCommands()
+						'commands' => $this->getCommands()
 					);
 					break;
 				case 'complete_config':
