@@ -88,7 +88,7 @@ class API {
 					break;
 			}
 		}
-		return json_encode($jsonData,JSON_UNESCAPED_UNICODE);
+		return json_encode($jsonData);
 		
 	}
 	/**
