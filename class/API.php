@@ -50,7 +50,9 @@ class API {
 				case 'complete_config':
 					// Dumps entire channel configuration, disabled by default
 					if ($this->cfg->useComplete) {
-						$jsonData = $this->ch;
+						foreach ($this->ch as $k => $v) {
+							$jsonData[$k] = htmlspecialchars($v);
+						}
 					}
 					break;
 				case 'filters':
