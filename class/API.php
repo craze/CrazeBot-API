@@ -194,7 +194,7 @@ class API {
 				'emoteSet' => $this->ch->emoteSet,
 				'enableThrow' => $this->ch->enableThrow,
 				'permittedDomains' => $this->ch->permittedDomains,
-				'subsciberAlert' => $this->ch->subScriberAlert,
+				'subscriberAlert' => $this->ch->subscriberAlert,
 				'announceJoinParts' => $this->ch->announceJoinParts,
 				'clickToTweetFormat' => $this->ch->ClickToTweetFormat,
 				'subscriberRegulars' => $this->ch->subscriberRegulars,
