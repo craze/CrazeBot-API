@@ -1,5 +1,5 @@
 # CrazeBot-API
-Provides API in JSON format between CrazeBot and CrazeBot-Website
+Provides an API for CrazeBot in JSON format
 
 ## Endpoints
 
