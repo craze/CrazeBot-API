@@ -7,6 +7,7 @@ Automatically available:
 
 - `botinfo` contains selected entries from global configuration
 - `<channel>/commands` has custom commands with any restrictions, schedule or repeat
+- `<channel>/autoreplies` shows custom text triggers with id and replies
 - `<channel>/filters` shows filter settings for a channel
 - `<channel>/settings` contains saved settings for a channel 
 - `<channel>/users` contains all users stored in the robot

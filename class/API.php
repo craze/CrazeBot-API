@@ -47,6 +47,14 @@ class API {
 						'commands' => $this->getCommands()
 					);
 					break;
+				case 'autoreplies':
+				    $jsonData = array(
+				        'settings' => array(
+				            'mode' => $this->ch->mode
+				        ),
+				        'autoreply' => $this->getAutoReply()
+				    );
+				    break;
 				case 'complete_config':
 					// Dumps entire channel configuration, disabled by default
 					if ($this->cfg->useComplete) {
@@ -153,6 +161,31 @@ class API {
 			}
 		}
 		return $cmdList;
+	}
+	/**
+	 *
+	 * @return array|array[] One array for each command inside parent array
+	 */
+	private function getAutoReply() {
+	    $cmdList = array ();
+	    if ($this->ch) {
+	        $fileRegex = array( '.*', '\Q', '\E' );
+	        $hideRegex = array( '*',  '',   ''   );
+	        
+	        $cK = str_replace($fileRegex, $hideRegex, explode ( ",,", $this->ch->autoReplyTriggers, - 1 ));
+	        $cV = explode ( ",,", $this->ch->autoReplyResponse, - 1 );
+	        
+	        $c = 0;
+	        while ( $c < count ( $cK ) ) {
+	            $cmdList[$c] = array(
+	                'id' => $c + 1,
+	                'trigger' => htmlspecialchars($cK[$c]),
+	                'text' => htmlspecialchars($cV[$c])
+	            );
+	            $c ++;
+	        }
+	    }
+	    return $cmdList;
 	}
 	/**
 	 * 
